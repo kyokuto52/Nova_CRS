@@ -1,4 +1,4 @@
-
+DATABASE Manual
 
 ## Create 'users' database. ##
 
@@ -22,3 +22,20 @@ CREATE TABLE `users` (
 ## Insert to database. ##
 
 INSERT users values ();
+
+
+## Create 'events' database. ##
+
+CREATE TABLE `events` (
+  `id` int(5) NOT NULL auto_increment,
+  `title` varchar(100) default NULL,
+  `date` date default NULL,
+  `location` varchar(12) default NULL,
+  `point` int(5) default NULL,
+  `profile` varchar(2000) default Null,
+   PRIMARY KEY (`id`)
+   ) CHARSET=utf8;
+   
+## Insert to database. ##
+
+INSERT events values ();

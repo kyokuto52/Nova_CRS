@@ -43,6 +43,28 @@ public class NrsApplication {
 		return new ModelAndView("login");
 	}
 	
+	@RequestMapping("/mypage")
+	public ModelAndView mypage(ModelAndView mav, HttpSession session) {
+
+		// Mybaits接口读取数据库
+		List<Users> rs = sm.getUser(session.getAttribute("username").toString());	
+		
+		String sex = null;
+		switch(rs.get(0).getSex()) {
+		case 0: sex = "性别：未填写"; break;
+		case 1: sex = "性别：男性"; break;
+		case 2: sex = "性别：女性"; break;
+		case 3: sex = "性别：其他"; break;
+		}
+		
+		mav.addObject("id", "用户ID:" + rs.get(0).getId() + "　");
+		mav.addObject("un", rs.get(0).getUserName());
+		mav.addObject("sex", sex);
+		mav.addObject("prof", rs.get(0).getProfile());
+		mav.setViewName("mypage");
+		return mav;
+	}
+	
 	@RequestMapping("/register")
 	public ModelAndView register() {
 		return new ModelAndView("register");
@@ -87,7 +109,7 @@ public class NrsApplication {
 				session.setAttribute("username", rs.get(0).getUserName());
 				// 指向成功页面
 				mav.addObject("rs", session.getAttribute("username") + "成功登录！");
-				mav.setViewName("success");
+				mav.setViewName("index-user");
 			}else {
 				// 登录失败
 				mav.addObject("rs", "密码错误");
