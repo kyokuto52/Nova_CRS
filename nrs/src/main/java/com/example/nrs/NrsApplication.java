@@ -43,6 +43,11 @@ public class NrsApplication {
 		return new ModelAndView("login");
 	}
 	
+	@RequestMapping("/reslist")
+	public ModelAndView reslist() {
+		return new ModelAndView("reslist");
+	}
+	
 	@RequestMapping("/mypage")
 	public ModelAndView mypage(ModelAndView mav, HttpSession session) {
 
