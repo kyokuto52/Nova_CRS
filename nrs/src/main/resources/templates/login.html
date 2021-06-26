@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/login.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body class="body">
+	<div style="text-align: center">
+		<h1>登录界面</h1>
+		<hr>
+		<table>
+			<tr>
+				<form action="/login" method="post" name="loginForm"
+					class="form-inline">
+					<tr>
+						<td>标识:<input type="text" name="username" placeholder="ID"
+							class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>密码:<input type="password" name="password"
+							placeholder="password" class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>
+							<p></p>
+							<p></p>
+						</td>
+					</tr>
+					<tr class="button">
+						<td><input type="submit" value="登录" class="btn btn-primary" /></td>
+					</tr>
+				</form>
+				<td></td>
+				<td><a href="register" style="font-size: 18px;">注册</a></td>
+			</tr>
+
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/register" method="post" class="form-example">
+		<div class="form-example">
+			<label for="name">用户名: </label> <input type="text" name="username"
+				id="name" required>
+		</div>
+		<div class="form-example">
+			<label for="email">密码: </label> <input type="text" name="password"
+				id="email" required>
+		</div>
+		<div class="form-example">
+			<label for="email">生日: </label> <input type="date" name="birthday"
+				id="email" required>
+		</div>
+		<div class="form-example">
+			<p>
+				性别： 
+				<label><input type="radio" name="sex" value="1">男</label>
+				<label><input type="radio" name="sex" value="2">女</label>
+				<label><input type="radio" name="sex" value="3">其他</label>
+			</p>
+		</div>
+		<div class="form-example">
+			<label for="email">手机号: </label> <input type="tel" name="phone"
+				id="email" required>
+		</div>
+		<div class="form-example">
+			<label for="email">邮箱: </label> <input type="email" name="email"
+				id="email" required>
+		</div>
+		<div class="form-example">
+			<input type="submit" value="注册">
+		</div>
+	</form>
+</body>
+</html>
