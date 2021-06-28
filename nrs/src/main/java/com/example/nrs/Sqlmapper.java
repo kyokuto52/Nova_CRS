@@ -28,6 +28,9 @@ public interface Sqlmapper {
 	void newUser(String un, String pw, Date dt, int sex, String phone, String email);
 	
 	//Events
+	@Select("select * from events")
+	List<Event> getAllEvent();
+	
 	@Select("select * from events where id = #{id}")
 	List<Event> getEvent(String id);
 	

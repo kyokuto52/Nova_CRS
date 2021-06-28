@@ -35,6 +35,10 @@ public class NrsApplication {
 			mav.setViewName("index-user");
 			mav.addObject("rs", session.getAttribute("username") + "你好！");
 		}
+		// 取出活动信息
+		List <Event> le = sm.getAllEvent();
+		mav.addObject("le", le);
+		
 		return mav;
 	}
 

@@ -14,7 +14,6 @@ public class Users {
 	private String phone;
 	private String profile;
 	private String events;
-	
 	public int getId() {
 		return id;
 	}
@@ -75,4 +74,5 @@ public class Users {
 	public void setEvents(String events) {
 		this.events = events;
 	}
+	
 }

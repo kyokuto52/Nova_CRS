@@ -23,9 +23,6 @@ CREATE TABLE `users` (
 
 INSERT users values ();
 
-Admin:
-INSERT users values (1,"admin","theadminpassword",0,"2000-01-01",100,
-"email@qq.com","000-00000000","This is administrator.",null);
 
 ## Create 'events' database. ##
 
@@ -42,6 +39,3 @@ CREATE TABLE `events` (
 ## Insert to database. ##
 
 INSERT events values ();
-
-Test contents:
-INSERT events values (1,"大型观鸟现场","2020-10-01","北京","10","泠鸢yousa线下演唱会，票数有限，先到先得。<br/>票价:500元");

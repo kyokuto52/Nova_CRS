@@ -9,7 +9,6 @@ public class Event {
 	private String location;
 	private int point;
 	private String profile;
-	
 	public int getId() {
 		return id;
 	}
@@ -46,4 +45,6 @@ public class Event {
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
+	
+	
 }
