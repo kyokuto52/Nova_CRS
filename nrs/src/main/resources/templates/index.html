@@ -38,15 +38,28 @@
 	<div class="tab-content container" id="pills-tabContent">
 		<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-			<th:block th:each="l:${le}">
-				<div class="card">
-					<img src="topimg_bbq.jpg" class="card-img-top" alt="...">
+			<th:block th:each="l:${bj}">
+				<div class="card position-relative">
+					<img th:src="${l.id} + '.jpg'" class="card-img-top" alt="...">
+					<a class="btn btn-info btn-sm position-absolute top-0 end-0 m-1" th:href="'/info?id='+ ${l.id}" type="button" style="opacity:0.7">预约</a>
 					<div class="card-body">
-						<p class="card-title fw-bold" th:text="${l.title}"></p>
-						<p class="card-text fw-light" th:text="${l.profile}"></p>
+						<div class="d-flex justify-content-between">
+							<h6>
+								<span class="badge rounded-pill bg-secondary" >日期</span>
+								<span class="fw-bold" th:text="${l.date}"></span>
+							</h6>
+							<span class="text-info" style="font-size:0.6rem;" th:text="'获得积分：' + ${l.point}"></span>
+						</div>
+						<div>
+							<span class="badge rounded-pill bg-secondary" >内容</span>
+							<span class="fw-light" th:text="${l.title}"></span>
+						</div>
 					</div>
 				</div>
+				<br/>
 			</th:block>
+			<br/>
+			<br/>
 
 		</div>
 		<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">

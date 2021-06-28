@@ -1,6 +1,7 @@
 package com.example.nrs;
 
 import java.sql.Date;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -36,15 +37,43 @@ public class NrsApplication {
 			mav.addObject("rs", session.getAttribute("username") + "你好！");
 		}
 		// 取出活动信息
-		List <Event> le = sm.getAllEvent();
-		mav.addObject("le", le);
+		List <Event> bj = sm.getLocalEvent("北京");
+		Collections.reverse(bj);
+		mav.addObject("bj", bj);
+		List <Event> sh = sm.getLocalEvent("上海");
+		Collections.reverse(sh);
+		mav.addObject("sh", sh);
 		
+		return mav;
+	}
+	
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public ModelAndView info(ModelAndView mav, @RequestParam("id") String id, HttpSession session) {
+
+		// 取出活动信息
+		List <Event> info = sm.getEvent(id);
+		mav.addObject("info", info.get(0));
+		mav.setViewName("info");
 		return mav;
 	}
 
 	@RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("login");
+	}
+	
+	@RequestMapping("/redirect")
+	public String redirect() {
+		return "/";
+	}
+	
+	@RequestMapping("/logout")
+	public ModelAndView logout(ModelAndView mav, HttpSession session) {
+		String un = (String) session.getAttribute("username");	
+		session.removeAttribute("username");
+		mav.addObject("rs", un + "成功登出！");
+		mav.setViewName("success");
+		return mav;
 	}
 	
 	@RequestMapping("/reslist")
@@ -103,7 +132,7 @@ public class NrsApplication {
 		return mav;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/logind", method = RequestMethod.POST)
 	public ModelAndView login(ModelAndView mav, @RequestParam("username") String username,
 			@RequestParam("password") String password, HttpSession session) {
 
@@ -118,7 +147,7 @@ public class NrsApplication {
 				session.setAttribute("username", rs.get(0).getUserName());
 				// 指向成功页面
 				mav.addObject("rs", session.getAttribute("username") + "成功登录！");
-				mav.setViewName("index-user");
+				mav.setViewName("success");
 			}else {
 				// 登录失败
 				mav.addObject("rs", "密码错误");

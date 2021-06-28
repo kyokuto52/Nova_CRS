@@ -14,11 +14,6 @@ public interface Sqlmapper {
 	
 	//Users
 	@Select("select * from users")
-	@Results(id = "id", value = {
-        @Result(column = "userName", property = "userName"),
-        @Result(column = "password", property = "password"),
-        @Result(column = "email", property = "email"),
-        @Result(column = "profile", property = "profile") })
 	List<Users> getAllUsers();
 	
 	@Select("select * from users where username = #{username}")
@@ -30,6 +25,9 @@ public interface Sqlmapper {
 	//Events
 	@Select("select * from events")
 	List<Event> getAllEvent();
+	
+	@Select("select * from events where location = #{loc}")
+	List<Event> getLocalEvent(String loc);
 	
 	@Select("select * from events where id = #{id}")
 	List<Event> getEvent(String id);

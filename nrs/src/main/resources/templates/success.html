@@ -6,5 +6,14 @@
 </head>
 <body>
  <h1 th:text="${rs}"></h1>
+ <p>2秒后跳回首页。</p>
+     <script type="text/javascript">
+        onload=function(){  //在进入网页的时候加载该方法
+            setTimeout(go, 2000);   //单位ms
+        };
+        function go(){
+            location.href="/";
+        }
+    </script>
 </body>
 </html>
