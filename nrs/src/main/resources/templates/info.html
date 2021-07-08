@@ -7,37 +7,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 <title>info</title>
 </head>
 <body>
-<div th:text="${info.title}"></div>
-<div th:text="${info.date}"></div>
-<div th:text="${info.point}"></div>
-<div th:text="${info.location}"></div>
-<div th:utext="${info.profile}"></div>
 
-<div>
-<a class="btn btn-info btn-sm" type="button" style="opacity:0.7">预约</a>
-<a class="btn btn-info btn-sm" type="button" href="javascript:history.back();" style="opacity:0.7">取消</a>
-</div>
-	<!-- JS Lib -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-		crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-	<script
-		src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item list-group-item-info"><div th:text="${info.title}"></div></li>
+    <li class="list-group-item"><b>日期</b>
+      <div th:text="${info.date}"></div></li>
+    <li class="list-group-item"><b>积分</b>
+      <div th:text="${info.point}"></div></li>
+    <li class="list-group-item"><b>地点</b>
+      <div th:text="${info.location}"></div></li>
+    <li class="list-group-item"><b>详细</b>
+      <div th:utext="${info.profile}"></div></li>
+    <li class="list-group-item"><div>
+        <a class="btn btn-info btn-sm" type="button" style="opacity: 0.7">预约</a> <a class="btn btn-info btn-sm" type="button"
+          href="javascript:history.back();" style="opacity: 0.7">取消</a>
+      </div></li>
+  </ul>
+
+  <!-- JS Lib -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 
 </body>
