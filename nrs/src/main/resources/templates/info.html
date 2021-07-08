@@ -24,9 +24,9 @@
       <div th:text="${info.location}"></div></li>
     <li class="list-group-item"><b>详细</b>
       <div th:utext="${info.profile}"></div></li>
-    <li class="list-group-item"><div>
-        <a class="btn btn-info btn-sm" type="button" style="opacity: 0.7">预约</a> <a class="btn btn-info btn-sm" type="button"
-          href="javascript:history.back();" style="opacity: 0.7">取消</a>
+    <li class="list-group-item"><div class="row">
+        <div class="col"><a class="btn btn-info btn-sm d-grid" type="button">预约</a></div> 
+        <div class="col"><a class="btn btn-info btn-sm d-grid" type="button" href="javascript:history.back();">取消</a></div> 
       </div></li>
   </ul>
 

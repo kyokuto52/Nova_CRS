@@ -31,18 +31,25 @@
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
       <th:block th:each="l:${bj}">
-        <div class="card position-relative">
-          <img th:src="${l.id} + '.jpg'" class="card-img-top" alt="..."> <a class="btn btn-info btn-sm position-absolute top-0 end-0 m-1"
-            th:href="'/info?id='+ ${l.id}" type="button" style="opacity: 0.7">预约</a>
+        <div class="card shadow-lg">
+          <img th:src="${l.id} + '.jpg'" class="card-img-top" alt="card picture">
           <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h6>
+            <div class="row">
+              <div class="col">
                 <span class="badge rounded-pill bg-secondary">日期</span> <span class="fw-bold" th:text="${l.date}"></span>
-              </h6>
-              <span class="text-info" style="font-size: 0.6rem;" th:text="'获得积分：' + ${l.point}"></span>
+              </div>
+              <div class="col-4">
+                <span class="badge rounded-pill bg-secondary">积分</span> <span class="fw-light" th:text="${l.point}"></span>
+              </div>
             </div>
-            <div>
+            <div class="mt-2">
               <span class="badge rounded-pill bg-secondary">内容</span> <span class="fw-light" th:text="${l.title}"></span>
+            </div>
+            <br>
+            <div class="row">
+              <div>
+                <a class="btn btn-info btn-sm d-grid" th:href="'/info?id='+ ${l.id}" type="button">预约</a>
+              </div>
             </div>
           </div>
         </div>
