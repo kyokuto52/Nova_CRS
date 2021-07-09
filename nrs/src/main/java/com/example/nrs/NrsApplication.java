@@ -56,7 +56,7 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping(value = "info", method = RequestMethod.GET)
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public ModelAndView info(ModelAndView mav, @RequestParam("id") String id, HttpSession session) {
 
 		// 取出活动信息
@@ -66,7 +66,7 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping(value = "reserve", method = RequestMethod.GET)
+	@RequestMapping(value = "/reserve", method = RequestMethod.GET)
 	public ModelAndView reserve(ModelAndView mav, @RequestParam("id") String id, HttpSession session) {
 
 		// 是否已经预约过
@@ -86,17 +86,17 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("login");
 	}
 
-	@RequestMapping("redirect")
+	@RequestMapping("/redirect")
 	public String redirect() {
 		return "/";
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public ModelAndView logout(ModelAndView mav, HttpSession session) {
 		String un = (String) session.getAttribute("username");
 		session.removeAttribute("username");
@@ -105,7 +105,7 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping("reservelist")
+	@RequestMapping("/reservelist")
 	public ModelAndView reservelist(ModelAndView mav, HttpSession session) {
 		List<Users> users = sm.getUser(session.getAttribute("username").toString());
 		String[] events = users.get(0).getEvents().split(",");
@@ -119,7 +119,7 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping("mypage")
+	@RequestMapping("/mypage")
 	public ModelAndView mypage(ModelAndView mav, HttpSession session) {
 
 		// Mybaits接口读取数据库
@@ -149,12 +149,12 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping("register")
+	@RequestMapping("/register")
 	public ModelAndView register() {
 		return new ModelAndView("register");
 	}
 
-	@RequestMapping(value = "register", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView register(ModelAndView mav, HttpSession session, @RequestParam("username") String username,
 			@RequestParam("password") String password, @RequestParam("sex") int sex,
 			@RequestParam("birthday") Date birthday, @RequestParam("phone") String phone,
@@ -174,7 +174,7 @@ public class NrsApplication extends SpringBootServletInitializer {
 		return mav;
 	}
 
-	@RequestMapping(value = "logind", method = RequestMethod.POST)
+	@RequestMapping(value = "/logind", method = RequestMethod.POST)
 	public ModelAndView login(ModelAndView mav, @RequestParam("username") String username,
 			@RequestParam("password") String password, HttpSession session) {
 
