@@ -5,8 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.Insert;
 
 @Mapper
@@ -21,6 +20,9 @@ public interface Sqlmapper {
 	
 	@Insert("INSERT users values (0, #{un} ,#{pw}, #{sex}, #{dt}, 0, #{email}, #{phone}, null , null)")
 	void newUser(String un, String pw, Date dt, int sex, String phone, String email);
+	
+	@Update("UPDATE users SET events = CONCAT(events,#{eventid},',') WHERE userName = #{userid}")
+	void addEvnet(String eventid, String userid);
 	
 	//Events
 	@Select("select * from events")

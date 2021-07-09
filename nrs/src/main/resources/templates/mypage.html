@@ -22,23 +22,33 @@
         <img src="icon.png" class="rounded-circle img-fluid" alt="...">
       </div>
       <div class="col-8">
-        <div class="fw-bold" th:text="${un}"></div>
-        <div class="fw-light">
-          <span th:text="${id}"></span>
-          <sapn th:text="${sex}">
-          </span>
+        <div class="m-2">
+          <div class="fw-bold" th:text="${un}"></div>
+          <div class="fw-light">
+            <span th:text="${id}"></span>
+            <sapn th:text="${sex}"></span>
+          </div>
+          <div class="mt-2" align="right">
+            <a href="/logout">登出账号</a>
+          </div>
         </div>
-        <a href="/logout">Logout</a>
       </div>
     </div>
     <div class="row">
       <div class="col-8 border-end border-top">
-        <p>个人简介</p>
-        <p th:text="${prof}"></p>
+        <div class="m-2">
+          <p>个人简介</p>
+          <p th:text="${prof}"></p>
+        </div>
       </div>
-      <div class="col-4 border-top">参加过的活动</div>
+      <div class="col-4 border-top">
+        <div class="m-2">活动记录</div>
+      </div>
     </div>
   </div>
+  <br />
+  <br /> 
+  <br /> 
 
   <!-- Contents-->
   <script type="text/babel" src="navbar-user.js"></script>

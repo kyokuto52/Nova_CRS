@@ -15,6 +15,28 @@
 <body>
 
   <div id="root"></div>
+  
+  <div class="border-bottom">
+    <div class="fw-bold m-2" align="center">预约成功记录</div>
+  </div>
+  <th:block th:each="l:${re}">
+    <div class="card shadow-lg m-2">
+      <img th:src="${l.id} + '.jpg'" class="card-img-top" alt="card picture">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <span class="badge rounded-pill bg-secondary">日期</span> <span class="fw-bold" th:text="${l.date}"></span>
+          </div>
+        </div>
+        <div class="mt-2">
+          <span class="badge rounded-pill bg-secondary">内容</span> <span class="fw-light" th:text="${l.title}"></span>
+        </div>
+      </div>
+    </div>
+  </th:block>
+  <br />
+  <br />
+  <br />
 
   <!-- Contents-->
   <script type="text/babel" src="navbar-user.js"></script>
